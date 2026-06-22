@@ -1,8 +1,13 @@
-.active-status {
+ion-card {
+  margin: 12px;
+  border-radius: 16px;
+}
+
+.active {
   color: #abc270;
   font-weight: bold;
 }
 
-ion-card {
-  border-radius: 16px;
+.page-title {
+  padding: 16px;
 }

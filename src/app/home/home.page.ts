@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { IonButton } from '@ionic/angular/standalone';
 import {
   IonHeader,
   IonToolbar,
@@ -29,6 +31,8 @@ import {
     IonGrid,
     IonRow,
     IonCol,
+    IonButton,
+    RouterLink,
   ],
 })
 export class HomePage {

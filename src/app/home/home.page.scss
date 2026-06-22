@@ -7,6 +7,10 @@
   font-weight: 700;
 }
 
+.page-title p {
+  color: #473c33;
+}
+
 .green-card {
   --background: #abc270;
 }
@@ -27,4 +31,16 @@ ion-card {
 ion-card-content {
   font-size: 2rem;
   font-weight: bold;
+}
+
+.actions {
+  padding: 1rem;
+}
+
+.children-button {
+  margin-bottom: 1rem;
+}
+
+.campaign-button {
+  margin-bottom: 1rem;
 }

@@ -35,6 +35,7 @@ import { DataService } from '../services/data.service';
 export class ChildDetailsPage implements OnInit {
   child: any;
   vaccines: any[] = [];
+  progress = 0;
 
   constructor(
     private route: ActivatedRoute,
@@ -49,5 +50,11 @@ export class ChildDetailsPage implements OnInit {
     this.vaccines = this.dataService.vaccines.filter(
       (vaccine) => vaccine.childId === id,
     );
+
+    const appliedVaccines = this.vaccines.filter(
+      (vaccine) => vaccine.applied,
+    ).length;
+
+    this.progress = Math.round((appliedVaccines / this.vaccines.length) * 100);
   }
 }

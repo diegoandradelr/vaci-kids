@@ -21,25 +21,43 @@
     <ion-card-content>
 
       <p>
-        Nascimento:
-        {{ child.birthDate }}
+        Nascimento: {{ child.birthDate }}
       </p>
 
       @if (child.status === 'up-to-date') {
-
       <p class="status-green">
         🟢 Vacinação em dia
       </p>
-
       }
 
       @if (child.status === 'overdue') {
-
       <p class="status-red">
         🔴 Vacinação atrasada
       </p>
-
       }
+
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card>
+
+    <ion-card-header>
+      <ion-card-title>
+        Progresso Vacinal
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <h1>
+        {{ progress }}%
+      </h1>
+
+      <div class="progress-container">
+        <div class="progress-bar" [style.width]="progress + '%'">
+        </div>
+      </div>
 
     </ion-card-content>
 
