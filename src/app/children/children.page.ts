@@ -1,22 +1,22 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import {
   IonHeader,
   IonToolbar,
   IonTitle,
   IonContent,
   IonCard,
+  IonCardContent,
   IonCardHeader,
   IonCardTitle,
-  IonCardContent,
-  IonGrid,
-  IonRow,
-  IonCol,
 } from '@ionic/angular/standalone';
 
+import { DataService } from '../services/data.service';
+
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-children',
+  templateUrl: './children.page.html',
+  styleUrls: ['./children.page.scss'],
   imports: [
     IonHeader,
     IonToolbar,
@@ -26,13 +26,9 @@ import {
     IonCardHeader,
     IonCardTitle,
     IonCardContent,
-    IonGrid,
-    IonRow,
-    IonCol,
+    RouterLink,
   ],
 })
-export class HomePage {
-  totalChildren = 2;
-  totalVaccines = 2;
-  totalCampaigns = 1;
+export class ChildrenPage {
+  constructor(public dataService: DataService) {}
 }

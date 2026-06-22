@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Crianças</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  @for (child of dataService.children; track child.id) {
+
+  <ion-card [routerLink]="['/child-details', child.id]">
+
+    <ion-card-header>
+      <ion-card-title>
+        {{ child.name }}
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <p>
+        Nascimento:
+        {{ child.birthDate }}
+      </p>
+
+      @if (child.status === 'up-to-date') {
+
+      <p class="status-green">
+        🟢 Vacinação em dia
+      </p>
+
+      }
+
+      @if (child.status === 'overdue') {
+
+      <p class="status-red">
+        🔴 Vacinação atrasada
+      </p>
+
+      }
+
+    </ion-card-content>
+
+  </ion-card>
+
+  }
+
+</ion-content>

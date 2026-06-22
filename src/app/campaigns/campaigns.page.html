@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Campanhas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  @for (campaign of dataService.campaigns; track campaign.id) {
+
+  <ion-card>
+
+    <ion-card-header>
+      <ion-card-title>
+        📢 {{ campaign.title }}
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <p>
+        {{ campaign.description }}
+      </p>
+
+      @if (campaign.active) {
+
+      <p class="active-status">
+        🟢 Campanha Ativa
+      </p>
+
+      }
+
+    </ion-card-content>
+
+  </ion-card>
+
+  }
+
+</ion-content>

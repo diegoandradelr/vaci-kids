@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Detalhes da Criança
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  @if (child) {
+
+  <ion-card>
+
+    <ion-card-header>
+      <ion-card-title>
+        {{ child.name }}
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <p>
+        Nascimento:
+        {{ child.birthDate }}
+      </p>
+
+      @if (child.status === 'up-to-date') {
+
+      <p class="status-green">
+        🟢 Vacinação em dia
+      </p>
+
+      }
+
+      @if (child.status === 'overdue') {
+
+      <p class="status-red">
+        🔴 Vacinação atrasada
+      </p>
+
+      }
+
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card>
+
+    <ion-card-header>
+      <ion-card-title>
+        Histórico Vacinal
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      @for (vaccine of vaccines; track vaccine.id) {
+
+      <p>
+
+        {{ vaccine.name }}
+
+        @if (vaccine.applied) {
+        ✅
+        }
+
+        @if (!vaccine.applied) {
+        ❌
+        }
+
+      </p>
+
+      }
+
+    </ion-card-content>
+
+  </ion-card>
+
+  }
+
+</ion-content>

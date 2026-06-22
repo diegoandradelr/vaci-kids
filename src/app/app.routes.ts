@@ -10,4 +10,20 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'children',
+    loadComponent: () =>
+      import('./children/children.page').then((m) => m.ChildrenPage),
+  },
+  {
+    path: 'child-details/:id',
+    loadComponent: () =>
+      import('./child-details/child-details.page').then(
+        (m) => m.ChildDetailsPage,
+      ),
+  },
+  {
+    path: 'campaigns',
+    loadComponent: () => import('./campaigns/campaigns.page').then( m => m.CampaignsPage)
+  },
 ];
